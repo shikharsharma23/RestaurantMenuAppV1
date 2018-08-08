@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+      <title>New Menu Item</title>
+
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+      <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <!--Google Fonts-->
+    <link href="https://fonts.googleapis.com/css?family=Alegreya+Sans:300,400,700" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='font-awesome.css')}}">
+
+    <!-- Animate Min .css for animations -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='animate.min.css')}}">
+
+
+    <!-- Our Stylesheet!!-->
+    <link rel="stylesheet" href="{{ url_for('static', filename='stylesNewMenuItem.css')}}">
+
+</head>
+<body>
+      <div class="container-fluid">
+            <div class="row">
+                  <div class="title col-md-6">Add a Menu Item</div>
+            </div>
+            <div class="row">
+            <form action='{{url_for('newMenuItem', restaurant_id = restaurant.id)}}' method = 'post' class="col-md4 form">
+                  <p>Name:</p>
+                  <input type ='text' size='30' name='name' required>
+                  <p>Description:</p>
+                  <textarea name = 'description' rows='5' cols='40' required></textarea>
+                  <p>Price:</p>
+                  <input type = 'text' size = '8' name='price' required>
+                  <p>Course:</p>
+                  <input type ='radio' name='course' value='Appetizer' checked>Appetizer
+                  <input type ='radio' name='course' value='Entree'>Entree
+                  <input type ='radio' name='course' value='Dessert'>Dessert
+                  <input type ='radio' name='course' value='Beverage'>Beverage
+
+<br><br><br>
+<button type='submit' class='btn  btn-primary'>Submit</button>
+
+</form>
+</div>
+</div>
+</body>
+</html>

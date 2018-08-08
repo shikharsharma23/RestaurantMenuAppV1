@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<!-- Required meta tags -->
+	<title>Restro Manager</title>
+	<meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+
+
+      <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <!--Google Fonts-->
+    <link href="https://fonts.googleapis.com/css?family=Alegreya+Sans:300,400,700" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='font-awesome.css')}}">
+
+    <!-- Animate Min .css for animations -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='animate.min.css')}}">
+
+
+    <!-- Our Stylesheet!!-->
+    <link rel="stylesheet" href="{{ url_for('static', filename='stylesRestaurants.css')}}">
+
+
+
+</head>
+
+<body>
+
+	<div class="restaurantList">
+		<div class="restaurantHeader">
+			Restro Manager   
+		</div>   
+
+		
+		<br>
+		<br>
+
+		<div class="container-fluid restaurantCardsContainer text-xs-center">
+			<div class="row">
+				{% for restaurant in restaurants %}
+					<div class="card col-md-3 col-sm-6">
+					 <div class="card-body">
+					    <h5 class="card-title"><a href = '{{url_for('showMenu', restaurant_id = restaurant.id)}}'>{{restaurant.name}}</a></h5>
+					    <a href='{{url_for('editRestaurant', restaurant_id = restaurant.id)}}' class="card-link">Edit Restaurant</a>
+					    <a href='{{url_for('deleteRestaurant', restaurant_id = restaurant.id)}}' class="card-link">Delete Restaurant</a>
+					 </div>
+					</div>
+				{% endfor %}
+			</div>
+		</div>
+
+		<div class= "text-center createRestuarantButton">
+			<button type="button" class="btn btn-primary" onclick="location.href = '{{url_for('newRestaurant')}}' ">Create New Restaurant</button>
+		</div>
+
+	</div>
+</body>
+</html>

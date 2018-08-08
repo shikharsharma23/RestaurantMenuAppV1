@@ -1,0 +1,47 @@
+html, body {
+    max-width: 100%;
+    overflow-x: hidden; /* prevent horizontal scrolling */
+}
+
+.card{
+	background-color: black;
+	margin: 1em;
+}
+
+.container-fluid{
+	margin-left: 0;
+	margin-right: 0;
+}
+
+.restaurantCardsContainer{
+	 width: 100%;
+	 align-items: center;
+	 padding-left: 12em;
+}
+
+
+.card-body > * {
+	color: white;
+}
+
+.createRestuarantButton {
+	width: 100%;
+	padding-top: 2em;
+	padding-bottom: 2em;
+
+}
+
+.restaurantHeader {
+color: #ffffff; font-size: 4em; font-family: 'Signika', sans-serif; padding-bottom: 10px; text-align: center; padding-top: 2em; 
+}
+
+
+.restaurantList{
+	background-image: url("img/bg.jpg");
+}
+
+.btn-primary{
+	font-size: 1em;
+	padding-left: 2em;
+	padding-right: 2em;
+}

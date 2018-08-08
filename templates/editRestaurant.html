@@ -1,0 +1,51 @@
+<html>
+<head>
+
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+
+
+	 <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <!--Google Fonts-->
+    <link href="https://fonts.googleapis.com/css?family=Alegreya+Sans:300,400,700" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='font-awesome.css')}}">
+
+    <!-- Animate Min .css for animations -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='animate.min.css')}}">
+
+
+    <!-- Our Stylesheet!!-->
+    <link rel="stylesheet" href="{{ url_for('static', filename='stylesEditRestaurant.css')}}">
+
+</head>
+<body>
+<div class="container-fluid">
+	<div class="row">
+		<div class="col-md-6 title"> Edit Restaurant </div>
+	</div>
+	<div class="row">
+		<div class="form col-md-6">
+			<form action='{{url_for('editRestaurant', restaurant_id = restaurant.id)}}' method = 'post'>
+
+				Name
+				<input type ='text' size='40' name='name' placeholder = '{{restaurant.name }}'>
+				<br>
+				<br>
+
+		    	<button type="submit" class="btn btn-primary">Edit</button>
+ 				<button type="button" class="btn btn-primary cancelButtonRed" onclick="location.href = '{{url_for('showRestaurants')}}' ">Cancel</button>
+				
+			</form>
+
+		</div>
+	</div>
+</div>
+
+</body>
+</html>

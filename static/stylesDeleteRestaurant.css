@@ -1,0 +1,29 @@
+html, body {
+    max-width: 100%;
+    overflow-x: hidden;
+}
+
+
+.deleteRestaurant{
+	background-image: url("img/bg.jpg") !important; /* to override bootstrap ztyling if any */
+	width: 100%;
+	height: 100%;
+	padding-top: 20%;
+
+}
+
+.alert {
+	margin-left:  auto; 
+	margin-right: auto;
+	text-align: center;
+}
+
+.buttonSet
+{
+	padding-left: 30%;
+	padding-top: 4%;
+}
+
+.cancelButtonRed{
+	background-color: red;
+}
